@@ -1,0 +1,61 @@
+index,name,fmove,cmove,cmove2,cp
+1,blastoise,bite,flash cannon,hydro pump,1500
+2,blastoise,bite,flash cannon,ice beam,1500
+3,blastoise,bite,hydro cannon,flash cannon,1500
+4,blastoise,bite,hydro cannon,hydro pump,1500
+5,blastoise,bite,hydro cannon,ice beam,1500
+6,blastoise,bite,hydro pump,ice beam,1500
+7,blastoise,water gun,flash cannon,hydro pump,1500
+8,blastoise,water gun,flash cannon,ice beam,1500
+9,blastoise,water gun,hydro cannon,flash cannon,1500
+10,blastoise,water gun,hydro cannon,hydro pump,1500
+11,blastoise,water gun,hydro cannon,ice beam,1500
+12,blastoise,water gun,hydro pump,ice beam,1500
+13,charizard,air slash,blast burn,dragon claw,1500
+14,charizard,air slash,blast burn,fire blast,1500
+15,charizard,air slash,blast burn,overheat,1500
+16,charizard,air slash,dragon claw,fire blast,1500
+17,charizard,air slash,dragon claw,overheat,1500
+18,charizard,air slash,fire blast,overheat,1500
+19,charizard,air slash,flamethrower,dragon claw,1500
+20,charizard,air slash,flamethrower,fire blast,1500
+21,charizard,air slash,flamethrower,overheat,1500
+22,charizard,ember,blast burn,dragon claw,1500
+23,charizard,ember,blast burn,fire blast,1500
+24,charizard,ember,blast burn,overheat,1500
+25,charizard,ember,dragon claw,fire blast,1500
+26,charizard,ember,dragon claw,overheat,1500
+27,charizard,ember,fire blast,overheat,1500
+28,charizard,ember,flamethrower,dragon claw,1500
+29,charizard,ember,flamethrower,fire blast,1500
+30,charizard,ember,flamethrower,overheat,1500
+31,charizard,fire spin,blast burn,dragon claw,1500
+32,charizard,fire spin,blast burn,fire blast,1500
+33,charizard,fire spin,blast burn,overheat,1500
+34,charizard,fire spin,dragon claw,fire blast,1500
+35,charizard,fire spin,dragon claw,overheat,1500
+36,charizard,fire spin,fire blast,overheat,1500
+37,charizard,fire spin,flamethrower,dragon claw,1500
+38,charizard,fire spin,flamethrower,fire blast,1500
+39,charizard,fire spin,flamethrower,overheat,1500
+40,charizard,wing attack,blast burn,dragon claw,1500
+41,charizard,wing attack,blast burn,fire blast,1500
+42,charizard,wing attack,blast burn,overheat,1500
+43,charizard,wing attack,dragon claw,fire blast,1500
+44,charizard,wing attack,dragon claw,overheat,1500
+45,charizard,wing attack,fire blast,overheat,1500
+46,charizard,wing attack,flamethrower,dragon claw,1500
+47,charizard,wing attack,flamethrower,fire blast,1500
+48,charizard,wing attack,flamethrower,overheat,1500
+49,venusaur,razor leaf,frenzy plant,petal blizzard,1500
+50,venusaur,razor leaf,frenzy plant,sludge bomb,1500
+51,venusaur,razor leaf,frenzy plant,solar beam,1500
+52,venusaur,razor leaf,petal blizzard,sludge bomb,1500
+53,venusaur,razor leaf,petal blizzard,solar beam,1500
+54,venusaur,razor leaf,sludge bomb,solar beam,1500
+55,venusaur,vine whip,frenzy plant,petal blizzard,1500
+56,venusaur,vine whip,frenzy plant,sludge bomb,1500
+57,venusaur,vine whip,frenzy plant,solar beam,1500
+58,venusaur,vine whip,petal blizzard,sludge bomb,1500
+59,venusaur,vine whip,petal blizzard,solar beam,1500
+60,venusaur,vine whip,sludge bomb,solar beam,1500
