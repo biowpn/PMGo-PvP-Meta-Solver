@@ -10,7 +10,7 @@ import copy
 import sys
 import os
 
-from game_solver import Game
+from GameSolver import Game
 
 
 
@@ -50,6 +50,20 @@ def load_pokemon_matrix(pkm_list_file, matrix_file):
     return pkm_name_list, matrix
 
 
+def symmetrize(matrix):
+    '''
+    Symmetrize the matrix:
+        a[i][i] = 0
+        a[i][j] = -a[i][j]
+    '''
+    n = len(matrix)
+    for i in range(n):
+        matrix[i][i] = 0
+        for j in range(i + 1, n):
+            matrix[i][j] = (matrix[i][j] - matrix[j][i]) / 2
+            matrix[j][i] = -matrix[i][j]
+
+
 def remove_by_indices(L, indices):
     '''
     Remove multiple elements from a list by given indices.
@@ -78,10 +92,7 @@ def make_smogon_tier_list(pkm_list_file, matrix_file, num_tiers, outfile):
     num_pokemon = len(pokemon_names)
 
     print("Symmetrizing matrix...", file=outfile)
-    for i in range(num_pokemon):
-        for j in range(i + 1, num_pokemon):
-            matrix[i][j] = (matrix[i][j] - matrix[j][i]) / 2
-            matrix[j][i] = -matrix[i][j]
+    symmetrize(matrix)
 
     print("Solving smogon tiers...", file=outfile)
     tier = 1
@@ -124,11 +135,8 @@ def make_dominator_tier_list(pkm_list_file, matrix_file, num_tiers, outfile):
 
     The tier 1 consists of the optimal meta derived from the orginal matrix.
     
-    For each Pokemon X in the optimal meta, remove X from the pool, then solve for the reduced matrix.
-    Add each new Pokemon Y (if any) to tier 2. Add X to Y's dominator set. Add back X to the pool. Repeat.
-
-    For each Pokemon Y in tier 2, remove Y and all of its dominators, then solve for the reduced matrix.
-    Add each new Pokemon Z (if any) to tier 3. Add Y to Z's dominator set. Add back Y and all its dominawtors to the pool. Repeat.
+    For each Pokemon X in Tier (N-1), remove X and all its dominators from the row player's action space, then solve for the reduced game.
+    Add each new Pokemon Y (if any) to Tier N. Add X to Y's dominator set. Add back X and all its dominators to the row player's action space. Repeat.
     '''
 
     print("Loading Pokemon list and matrix...", file=outfile)
@@ -136,10 +144,7 @@ def make_dominator_tier_list(pkm_list_file, matrix_file, num_tiers, outfile):
     num_pokemon = len(pokemon_names)
 
     print("Symmetrizing matrix...", file=outfile)
-    for i in range(num_pokemon):
-        for j in range(i + 1, num_pokemon):
-            matrix[i][j] = (matrix[i][j] - matrix[j][i]) / 2
-            matrix[j][i] = -matrix[i][j]
+    symmetrize(matrix)
     
     print("Solving dominator tiers...", file=outfile)
     dominators = [set() for _ in range(num_pokemon)]
@@ -153,9 +158,8 @@ def make_dominator_tier_list(pkm_list_file, matrix_file, num_tiers, outfile):
                 pokemon_indices_to_remove = get_all_dominators(pokemon_index, dominators)
                 pokemon_indices_remained = [i for i in range(num_pokemon) if i not in pokemon_indices_to_remove]
                 matrix_reduced = copy.deepcopy(matrix)
+                # Only remove for the row player
                 remove_by_indices(matrix_reduced, pokemon_indices_to_remove)
-                for row in matrix_reduced:
-                    remove_by_indices(row, pokemon_indices_to_remove)
 
                 # Solve for the reduced game
                 game = Game(matrix_reduced)

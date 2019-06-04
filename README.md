@@ -55,16 +55,19 @@ Tier 1
 56: VW.FP.SB Venusaur
 
 Tier 2
-...
-
+4: B.HC.HP Blastoise
+10: WG.HC.HP Blastoise
+13: AS.BB.DC Charizard
+46: WA.F.DC Charizard
+17: AS.DC.O Charizard
 
 Tier 3
-...
-
+9: WG.HC.FC Blastoise
+3: B.HC.FC Blastoise
+44: WA.DC.O Charizard
+16: AS.DC.FB Charizard
 
 Dominator Sets:
-3: B.HC.FC Blastoise is dominated by: 4: B.HC.HP Blastoise
-4: B.HC.HP Blastoise is dominated by: 11: WG.HC.IB Blastoise
 ...
 
 ```
